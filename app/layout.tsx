@@ -41,6 +41,11 @@ export const metadata: Metadata = {
     'materiais de construção',
     'São Carlos',
   ],
+  icons: {
+    icon: '/images/favicon.png',
+    shortcut: '/images/favicon.png',
+    apple: '/images/favicon.png',
+  },
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
