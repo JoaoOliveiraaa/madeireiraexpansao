@@ -7,16 +7,23 @@ export const contato = {
   instagram: 'https://www.instagram.com/expansaomadeireira',
   instagramHandle: '@expansaomadeireira',
   email: 'contato@madeireiraexpansao.com.br',
-  endereco: 'São Carlos — SP',
+  emailHref: 'mailto:contato@madeireiraexpansao.com.br',
+  endereco: 'Av. Das Gardenias, 421. Cid. Jardim, São Carlos',
+  enderecoCompleto:
+    'Av. Das Gardenias, 421. Cid. Jardim, São Carlos, Brazil - CEP 13566-540 — atendemos a cidade e toda a região com entrega própria.',
+  horario: 'Segunda a sexta, 8h às 18h · Sábado, 8h às 12h',
   fundacao: 1996,
+  mapEmbedUrl:
+    'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3704.0!2d-47.8906!3d-22.0175!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjLCsDAxJzAzLjAiUyA0N8KwNTMnMjYuMiJX!5e0!3m2!1spt-BR!2sbr!4v1',
 }
 
 export const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'Empresa', href: '/empresa' },
+  { label: 'Sobre', href: '/sobre' },
   { label: 'Produtos', href: '/produtos' },
   { label: 'Serviços', href: '/servicos' },
   { label: 'Portfólio', href: '/portfolio' },
+  { label: 'FAQ', href: '/faq' },
   { label: 'Contato', href: '/contato' },
 ]
 
@@ -122,31 +129,43 @@ export const servicos = [
     titulo: 'Atendimento especializado',
     descricao:
       'Uma equipe que conhece cada produto e orienta na escolha certa para o seu projeto, do profissional experiente ao cliente que está construindo o primeiro lar.',
+    destaque:
+      'Consultoria técnica gratuita para ajudar na escolha de materiais, bitolas e acabamentos.',
   },
   {
     titulo: 'Corte e beneficiamento de madeira',
     descricao:
       'Serviço de corte sob medida e beneficiamento, entregando as peças prontas para uso e reduzindo o desperdício na sua obra.',
+    destaque:
+      'Corte preciso conforme as medidas do seu projeto, com acabamento profissional.',
   },
   {
     titulo: 'Orçamento personalizado',
     descricao:
       'Avaliamos as necessidades do seu projeto e montamos um orçamento transparente, com as melhores condições para cada perfil de cliente.',
+    destaque:
+      'Resposta rápida e proposta detalhada, sem surpresas no final da obra.',
   },
   {
     titulo: 'Entrega rápida na região',
     descricao:
       'Logística própria e ágil para São Carlos e região, levando seus materiais com cuidado e dentro do prazo combinado.',
+    destaque:
+      'Entrega programada para não parar a sua obra no momento certo.',
   },
   {
     titulo: 'Apoio a profissionais',
     descricao:
       'Condições especiais e suporte técnico para marceneiros, construtores, arquitetos e engenheiros que confiam na Expansão.',
+    destaque:
+      'Parceria de longa data com profissionais da construção e marcenaria.',
   },
   {
     titulo: 'Variedade e disponibilidade',
     descricao:
       'Um mix completo de produtos sempre à disposição, para que você encontre tudo o que precisa em um só lugar.',
+    destaque:
+      'Seis linhas de produtos reunidas em um único ponto de compra.',
   },
 ]
 
@@ -182,3 +201,103 @@ export const diferenciais = [
       'Atendemos profissionais da construção e consumidores finais com o mesmo cuidado.',
   },
 ]
+
+export const portfolioItems = [
+  {
+    slug: 'residencia-pisos',
+    titulo: 'Residência com pisos laminados',
+    categoria: 'Pisos',
+    imagem: '/images/portfolio-1.png',
+    descricao:
+      'Ambiente integrado com piso laminado de alta resistência, combinando conforto visual e praticidade no dia a dia.',
+  },
+  {
+    slug: 'marcenaria-portas',
+    titulo: 'Marcenaria e portas internas',
+    categoria: 'Portas',
+    imagem: '/images/portfolio-2.png',
+    descricao:
+      'Portas de madeira maciça e acabamentos que elevam a estética dos ambientes internos com elegância atemporal.',
+  },
+  {
+    slug: 'estrutura-madeira',
+    titulo: 'Estrutura em madeira',
+    categoria: 'Madeiras',
+    imagem: '/images/portfolio-3.png',
+    descricao:
+      'Projeto estrutural com madeira selecionada, demonstrando resistência e beleza natural em cada viga e tábua.',
+  },
+  {
+    slug: 'acabamento-forro',
+    titulo: 'Acabamento com forro e lambris',
+    categoria: 'Acabamentos',
+    imagem: '/images/portfolio-4.png',
+    descricao:
+      'Detalhes de acabamento que transformam paredes e tetos, criando ambientes acolhedores e sofisticados.',
+  },
+  {
+    slug: 'esquadrias-aluminio',
+    titulo: 'Esquadrias de alumínio',
+    categoria: 'Alumínio',
+    imagem: '/images/portfolio-5.png',
+    descricao:
+      'Fechamentos em alumínio que unem leveza, durabilidade e design moderno para janelas e portas.',
+  },
+  {
+    slug: 'obra-completa',
+    titulo: 'Obra completa residencial',
+    categoria: 'Projeto integrado',
+    imagem: '/images/portfolio-6.png',
+    descricao:
+      'Da estrutura ao acabamento, materiais da Expansão em cada etapa de uma residência em São Carlos.',
+  },
+]
+
+export const faqItems = [
+  {
+    pergunta: 'Quais produtos a Madeireira Expansão oferece?',
+    resposta:
+      'Trabalhamos com madeiras, pisos laminados e vinílicos, portas, alumínio, ferragens e acabamentos. É um mix completo para construção, reforma e marcenaria — tudo em um só lugar.',
+  },
+  {
+    pergunta: 'Vocês fazem entrega em São Carlos e região?',
+    resposta:
+      'Sim. Temos logística própria para entrega em São Carlos e cidades da região. O prazo e a disponibilidade são confirmados no orçamento, conforme o volume e o destino.',
+  },
+  {
+    pergunta: 'Como solicito um orçamento?',
+    resposta:
+      'Você pode ligar, enviar mensagem pelo WhatsApp ou preencher o formulário na página de Contato. Nossa equipe retorna com uma proposta personalizada para o seu projeto.',
+  },
+  {
+    pergunta: 'Vocês cortam madeira sob medida?',
+    resposta:
+      'Sim. Oferecemos serviço de corte e beneficiamento de madeira conforme as medidas do seu projeto, reduzindo desperdício e facilitando a instalação na obra.',
+  },
+  {
+    pergunta: 'Atendem profissionais da construção e marcenaria?',
+    resposta:
+      'Atendemos marceneiros, construtores, arquitetos, engenheiros e consumidores finais. Profissionais contam com suporte técnico e condições especiais de parceria.',
+  },
+  {
+    pergunta: 'Quais são os horários de funcionamento?',
+    resposta: `Nosso horário de atendimento é ${contato.horario}. Fora desse período, você pode enviar mensagem pelo WhatsApp e retornamos no próximo horário comercial.`,
+  },
+  {
+    pergunta: 'Posso visitar a loja antes de comprar?',
+    resposta:
+      'Sim, e recomendamos! Visitar a loja permite ver a qualidade dos materiais, conversar com nossa equipe e tirar dúvidas presencialmente. Estamos em São Carlos, SP.',
+  },
+  {
+    pergunta: 'Vocês trabalham com marcas reconhecidas?',
+    resposta:
+      'Selecionamos produtos de marcas reconhecidas no mercado, priorizando durabilidade, acabamento e confiabilidade — critérios que aplicamos há quase 30 anos.',
+  },
+]
+
+export const siteConfig = {
+  name: 'Madeireira Expansão',
+  url: 'https://madeireiraexpansao.com.br',
+  description:
+    'Referência em São Carlos e região desde 1996. Madeiras, portas, pisos laminados, alumínio, ferragens, acabamentos e materiais de construção com qualidade e atendimento especializado.',
+}

@@ -1,25 +1,30 @@
+import type { Metadata } from 'next'
 import { HomeHero } from '@/components/home/home-hero'
 import {
   QuemSomos,
-  Diferenciais,
+  DiferenciaisHome,
   CategoriasHome,
   ServicosHome,
   PortfolioHome,
 } from '@/components/home/home-sections'
-import { ContatoResumo } from '@/components/home/contato-resumo'
 import { CtaOrcamento } from '@/components/cta-orcamento'
+
+export const metadata: Metadata = {
+  title: 'Madeireira Expansão | Madeiras e Materiais de Construção em São Carlos',
+  description:
+    'Referência em São Carlos e região desde 1996. Madeiras, portas, pisos laminados, alumínio, ferragens e acabamentos com atendimento especializado.',
+}
 
 export default function HomePage() {
   return (
     <>
       <HomeHero />
       <QuemSomos />
-      <Diferenciais />
+      <DiferenciaisHome />
       <CategoriasHome />
       <ServicosHome />
       <PortfolioHome />
       <CtaOrcamento />
-      <ContatoResumo />
     </>
   )
 }

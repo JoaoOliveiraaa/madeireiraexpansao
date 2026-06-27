@@ -29,7 +29,7 @@ export function HomeHero() {
               <ArrowRight className="size-4" />
             </Link>
             <Link
-              href="/empresa"
+              href="/sobre"
               className="inline-flex items-center justify-center gap-2 rounded-full border border-border bg-background px-7 py-3.5 text-sm font-semibold text-foreground transition-all hover:border-primary/40 hover:text-primary"
             >
               Conheça nossa história

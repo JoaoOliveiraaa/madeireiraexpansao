@@ -4,6 +4,7 @@ import { Fraunces, Inter, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import { SiteHeader } from '@/components/site-header'
 import { SiteFooter } from '@/components/site-footer'
+import { siteConfig } from '@/lib/site-data'
 
 const fraunces = Fraunces({
   variable: '--font-fraunces',
@@ -23,13 +24,13 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
-    default: 'Madeireira Expansão | Madeiras e Materiais de Construção em São Carlos',
+    default:
+      'Madeireira Expansão | Madeiras e Materiais de Construção em São Carlos',
     template: '%s | Madeireira Expansão',
   },
-  description:
-    'Referência em São Carlos e região desde 1996. Madeiras, portas, pisos laminados, alumínio, ferragens, acabamentos e materiais de construção com qualidade e atendimento especializado.',
-  generator: 'v0.app',
+  description: siteConfig.description,
   keywords: [
     'madeireira',
     'madeiras',
@@ -40,6 +41,23 @@ export const metadata: Metadata = {
     'materiais de construção',
     'São Carlos',
   ],
+  openGraph: {
+    type: 'website',
+    locale: 'pt_BR',
+    url: siteConfig.url,
+    siteName: siteConfig.name,
+    title: siteConfig.name,
+    description: siteConfig.description,
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: siteConfig.name,
+    description: siteConfig.description,
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 export const viewport: Viewport = {

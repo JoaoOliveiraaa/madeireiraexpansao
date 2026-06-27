@@ -6,7 +6,7 @@ import { Reveal } from '@/components/reveal'
 import { CtaOrcamento } from '@/components/cta-orcamento'
 
 export const metadata: Metadata = {
-  title: 'Empresa',
+  title: 'Sobre',
   description:
     'Conheça a história da Madeireira Expansão, referência em São Carlos desde 1996. Missão, visão, valores e o compromisso com qualidade e atendimento personalizado.',
 }
@@ -74,17 +74,16 @@ const compromissos = [
   },
 ]
 
-export default function EmpresaPage() {
+export default function SobrePage() {
   return (
     <>
       <PageHero
-        breadcrumb="Empresa"
+        breadcrumb="Sobre"
         eyebrow="Nossa história"
         title="Quase 30 anos construindo confiança"
         description="Desde 1996, a Madeireira Expansão é parte da história de quem constrói em São Carlos e região. Conheça a empresa por trás de cada atendimento."
       />
 
-      {/* Introdução com imagem */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <Reveal>
@@ -128,7 +127,6 @@ export default function EmpresaPage() {
         </div>
       </section>
 
-      {/* Linha do tempo */}
       <section className="bg-secondary/50 py-20 lg:py-28">
         <div className="mx-auto max-w-5xl px-5 sm:px-8">
           <Reveal className="max-w-2xl">
@@ -164,7 +162,6 @@ export default function EmpresaPage() {
         </div>
       </section>
 
-      {/* Missão, visão, valores */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
         <Reveal className="max-w-2xl">
           <span className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
@@ -193,7 +190,6 @@ export default function EmpresaPage() {
         </div>
       </section>
 
-      {/* Compromissos */}
       <section className="bg-secondary/50 py-20 lg:py-28">
         <div className="mx-auto max-w-7xl px-5 sm:px-8">
           <div className="grid gap-5 lg:grid-cols-2">

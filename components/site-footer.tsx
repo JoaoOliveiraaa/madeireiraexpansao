@@ -4,6 +4,8 @@ import { Phone, MessageCircle, MapPin } from 'lucide-react'
 import { InstagramIcon } from '@/components/icons/instagram'
 import { navLinks, categorias, contato } from '@/lib/site-data'
 
+const footerNavLinks = navLinks.filter((link) => link.href !== '/')
+
 export function SiteFooter() {
   const ano = new Date().getFullYear()
 
@@ -24,6 +26,12 @@ export function SiteFooter() {
               região desde {contato.fundacao}. Qualidade, variedade e
               atendimento que constroem confiança.
             </p>
+            <Link
+              href="/contato"
+              className="mt-6 inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground shadow-sm transition-all hover:bg-primary/90 hover:shadow-md"
+            >
+              Solicitar Orçamento
+            </Link>
           </div>
 
           <div>
@@ -31,7 +39,7 @@ export function SiteFooter() {
               Navegação
             </h3>
             <ul className="mt-5 space-y-3">
-              {navLinks.map((link) => (
+              {footerNavLinks.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -52,7 +60,7 @@ export function SiteFooter() {
               {categorias.map((cat) => (
                 <li key={cat.slug}>
                   <Link
-                    href="/produtos"
+                    href={`/produtos#${cat.slug}`}
                     className="text-sm text-muted-foreground transition-colors hover:text-primary"
                   >
                     {cat.titulo}

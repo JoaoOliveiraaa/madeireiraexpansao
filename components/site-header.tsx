@@ -88,7 +88,7 @@ export function SiteHeader() {
       <div
         className={cn(
           'overflow-hidden border-t border-border/60 bg-background transition-[max-height,opacity] duration-300 lg:hidden',
-          open ? 'max-h-[32rem] opacity-100' : 'max-h-0 opacity-0',
+          open ? 'max-h-[40rem] opacity-100' : 'max-h-0 opacity-0',
         )}
       >
         <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-4 sm:px-8">

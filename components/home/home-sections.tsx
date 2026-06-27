@@ -11,7 +11,8 @@ import {
   HardHat,
 } from 'lucide-react'
 import { Reveal } from '@/components/reveal'
-import { categorias, diferenciais, servicos } from '@/lib/site-data'
+import { SectionHeader } from '@/components/section-header'
+import { categorias, diferenciais, servicos, portfolioItems } from '@/lib/site-data'
 
 const diferencialIcons = [Award, Users, ShieldCheck, Layers, Truck, HardHat]
 
@@ -40,19 +41,13 @@ export function QuemSomos() {
           <p className="mt-6 text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
             Fundada em 1996, a Madeireira Expansão nasceu com o propósito de
             oferecer materiais de qualidade e um atendimento que realmente
-            entende as necessidades de quem constrói. Ao longo de quase três
-            décadas, crescemos junto com São Carlos e região, conquistando a
-            confiança de profissionais e famílias.
-          </p>
-          <p className="mt-4 text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Hoje somos referência em um mix completo de produtos, sempre com a
-            mesma seriedade do primeiro dia.
+            entende as necessidades de quem constrói.
           </p>
           <Link
-            href="/empresa"
+            href="/sobre"
             className="group mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary"
           >
-            Conheça a empresa
+            Conheça nossa história
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
           </Link>
         </Reveal>
@@ -61,23 +56,21 @@ export function QuemSomos() {
   )
 }
 
-export function Diferenciais() {
+export function DiferenciaisHome() {
+  const preview = diferenciais.slice(0, 3)
+
   return (
     <section className="bg-secondary/50 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <Reveal className="max-w-2xl">
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
-            Nossos diferenciais
-          </span>
-          <h2 className="mt-4 text-balance text-3xl font-medium leading-tight text-foreground sm:text-4xl lg:text-5xl">
-            Motivos para construir com a Expansão
-          </h2>
-        </Reveal>
-        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {diferenciais.map((item, i) => {
+        <SectionHeader
+          eyebrow="Nossos diferenciais"
+          title="Motivos para construir com a Expansão"
+        />
+        <div className="mt-14 grid gap-5 sm:grid-cols-3">
+          {preview.map((item, i) => {
             const Icon = diferencialIcons[i % diferencialIcons.length]
             return (
-              <Reveal as="article" key={item.titulo} delay={(i % 3) * 80}>
+              <Reveal as="article" key={item.titulo} delay={i * 80}>
                 <div className="group h-full rounded-2xl border border-border bg-card p-7 transition-all hover:-translate-y-1 hover:border-primary/30 hover:shadow-lg">
                   <span className="inline-flex size-12 items-center justify-center rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                     <Icon className="size-6" />
@@ -93,23 +86,30 @@ export function Diferenciais() {
             )
           })}
         </div>
+        <Reveal className="mt-10">
+          <Link
+            href="/sobre"
+            className="group inline-flex items-center gap-2 text-sm font-semibold text-primary"
+          >
+            Saiba mais sobre a empresa
+            <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </Reveal>
       </div>
     </section>
   )
 }
 
 export function CategoriasHome() {
+  const preview = categorias.slice(0, 3)
+
   return (
     <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
-      <Reveal className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-        <div className="max-w-2xl">
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
-            Categorias de produtos
-          </span>
-          <h2 className="mt-4 text-balance text-3xl font-medium leading-tight text-foreground sm:text-4xl lg:text-5xl">
-            Tudo para a sua obra em um só lugar
-          </h2>
-        </div>
+      <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+        <SectionHeader
+          eyebrow="Categorias de produtos"
+          title="Tudo para a sua obra em um só lugar"
+        />
         <Link
           href="/produtos"
           className="group inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-primary"
@@ -117,13 +117,13 @@ export function CategoriasHome() {
           Ver todos os produtos
           <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
         </Link>
-      </Reveal>
+      </div>
 
       <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-        {categorias.map((cat, i) => (
+        {preview.map((cat, i) => (
           <Reveal as="article" key={cat.slug} delay={(i % 3) * 80}>
             <Link
-              href="/produtos"
+              href={`/produtos#${cat.slug}`}
               className="group block h-full overflow-hidden rounded-2xl border border-border bg-card shadow-sm transition-all hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
@@ -160,24 +160,17 @@ export function ServicosHome() {
   return (
     <section className="bg-secondary/50 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
-        <Reveal className="max-w-2xl">
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
-            Serviços
-          </span>
-          <h2 className="mt-4 text-balance text-3xl font-medium leading-tight text-foreground sm:text-4xl lg:text-5xl">
-            Muito além de vender materiais
-          </h2>
-          <p className="mt-5 text-pretty text-base leading-relaxed text-muted-foreground sm:text-lg">
-            Oferecemos suporte completo para que cada etapa do seu projeto seja
-            mais simples, do primeiro orçamento à entrega na obra.
-          </p>
-        </Reveal>
+        <SectionHeader
+          eyebrow="Serviços"
+          title="Muito além de vender materiais"
+          description="Oferecemos suporte completo para que cada etapa do seu projeto seja mais simples, do primeiro orçamento à entrega na obra."
+        />
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {servicos.slice(0, 3).map((servico, i) => (
             <Reveal as="article" key={servico.titulo} delay={(i % 3) * 80}>
               <div className="flex h-full flex-col rounded-2xl border border-border bg-card p-7">
                 <span className="font-serif text-2xl text-primary/30">
-                  0{i + 1}
+                  {String(i + 1).padStart(2, '0')}
                 </span>
                 <h3 className="mt-3 text-xl font-medium text-foreground">
                   {servico.titulo}
@@ -203,25 +196,16 @@ export function ServicosHome() {
   )
 }
 
-const portfolioPreview = [
-  '/images/portfolio-1.png',
-  '/images/portfolio-2.png',
-  '/images/portfolio-3.png',
-  '/images/portfolio-6.png',
-]
-
 export function PortfolioHome() {
+  const preview = portfolioItems.slice(0, 4)
+
   return (
     <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8 lg:py-28">
-      <Reveal className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
-        <div className="max-w-2xl">
-          <span className="text-sm font-semibold uppercase tracking-[0.2em] text-accent">
-            Portfólio
-          </span>
-          <h2 className="mt-4 text-balance text-3xl font-medium leading-tight text-foreground sm:text-4xl lg:text-5xl">
-            Projetos que ganham vida com nossos materiais
-          </h2>
-        </div>
+      <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
+        <SectionHeader
+          eyebrow="Portfólio"
+          title="Projetos que ganham vida com nossos materiais"
+        />
         <Link
           href="/portfolio"
           className="group inline-flex shrink-0 items-center gap-2 text-sm font-semibold text-primary"
@@ -229,29 +213,30 @@ export function PortfolioHome() {
           Ver galeria completa
           <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
         </Link>
-      </Reveal>
+      </div>
 
       <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {portfolioPreview.map((src, i) => (
+        {preview.map((item, i) => (
           <Reveal
-            key={src}
+            key={item.slug}
             delay={(i % 4) * 70}
             className={i === 0 ? 'sm:col-span-2 sm:row-span-2' : ''}
           >
-            <div
-              className={`group relative overflow-hidden rounded-2xl border border-border ${
+            <Link
+              href="/portfolio"
+              className={`group relative block overflow-hidden rounded-2xl border border-border ${
                 i === 0 ? 'aspect-square sm:h-full' : 'aspect-[4/3]'
               }`}
             >
               <Image
-                src={src}
-                alt="Ambiente finalizado com materiais da Madeireira Expansão"
+                src={item.imagem}
+                alt={item.titulo}
                 fill
                 sizes="(max-width: 768px) 100vw, 25vw"
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div className="absolute inset-0 bg-foreground/0 transition-colors duration-500 group-hover:bg-foreground/10" />
-            </div>
+            </Link>
           </Reveal>
         ))}
       </div>
